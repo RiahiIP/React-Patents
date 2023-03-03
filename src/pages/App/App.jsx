@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <main className="App">
       <h1>React Web Scraper</h1>
-    </div>
+    </main>
   );
 }
 
-export default App;
+
