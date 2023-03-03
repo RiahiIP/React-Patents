@@ -1,0 +1,7 @@
+.Document {
+    height: 90vh;
+}
+
+.Document h2,h3 {
+    text-align: center;
+}
