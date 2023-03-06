@@ -1,6 +1,6 @@
 import './Document.css'
 
-export default function Document(documentData) {
+export default function Document({documentData}) {
     return(
         <div className='Document card col p-4 m-2'>
             <div className=''>
@@ -29,11 +29,11 @@ export default function Document(documentData) {
                             </tr>
                             <tr>
                                 <td><b>Assignees: </b></td>
-                                <td>{documentData.assignees}</td>
+                                <td>{documentData.assigneeList}</td>
                             </tr>
                             <tr>
                                 <td><b>Inventors: </b></td>
-                                <td>{documentData.inventors}</td>
+                                <td>{documentData.inventorList}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -2,7 +2,9 @@ import './PatentSearchForm.css'
 
 import { useState } from 'react';
 
-export default function PatentSearchForm(updateDocument) {
+import {postPatentId } from '../../utilities/api/patentData';
+
+export default function PatentSearchForm({updateDocument}) {
 
     const [formData, setFormData] = useState('')
 
@@ -13,9 +15,17 @@ export default function PatentSearchForm(updateDocument) {
         };
         setFormData(newFormData);
     }
-    const handleSubmit = (evt) => {
+    const handleSubmit = async (evt) => {
         evt.preventDefault()
-        window.alert(formData.patentId)
+        // window.alert(formData.patentId)
+        try {
+            // const patentId = formData.patentId
+            const patentData = await postPatentId(formData)
+            console.log(patentData)
+            updateDocument(patentData)
+        } catch (error) {
+            
+        }
     }
 
     return(

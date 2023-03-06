@@ -8,17 +8,26 @@ function index (req, res, next) {
 }
 
 function create(req, res, next) {
-    res.redirect(`/${req.body.patentId}`)
+    console.log(req.body)
+    pageData.pageData(req.body.patentId)
+    .then((data)=> {
+        console.log('data:', data)
+        console.log(data)
+        res.json(data)
+    })
+    .catch((err)=> {
+        console.log(err);
+        res.status(500).send('An error occurred', err);
+    })
+    // res.json(req.body)
 }
 
-function show(req, res, next) {
-    pageData.pageData(req.params.id)
+function get(req, res, next) {
+    console.log('req body(controller): ', req.params)
+    pageData.pageData(req.body)
     .then((data)=> {
-        // console.log('data:', data)
-        res.render('show', { 
-            data:data,
-            title: 'Google Patent Scraper',
-        })
+        console.log('data:', data)
+        res.json(data)
     })
     .catch((err)=> {
         console.log(err);
@@ -28,6 +37,6 @@ function show(req, res, next) {
 
 module.exports = {
 index,
-show,
+get,
 create
 }
