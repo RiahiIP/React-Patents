@@ -1,4 +1,4 @@
-const pageData = require('../../models/pageData')
+const pageData = require('../../helpers/pageData')
 
 
 function index (req, res, next) {
