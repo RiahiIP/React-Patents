@@ -32,7 +32,7 @@ export default function Document({documentData}) {
                             {documentData.patentNumber &&
                             <tr>
                                 <td><b>Patent Number: </b></td>
-                                <td>{documentData.dateSubmitted}</td>
+                                <td>{documentData.patentNumber}</td>
                             </tr>
                             }
                             
