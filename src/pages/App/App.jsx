@@ -5,11 +5,10 @@ import PatentSearch from '../../components/PatentSearch/PatentSearch'
 
 import { useState } from 'react';
 
-// import { getPatent } from '../../utilities/api/patentData';
 
 export default function App() {
   const [documentData, setDocumentData] = useState({
-    title: '',
+    title: 'DOCUMENT',
     patentPDF: '',
     applicationNumber: '',
     dateSubmitted: '',
@@ -23,7 +22,7 @@ export default function App() {
   })
 
   const updateDocument =async (patentData) => {
-    console.log('New data', patentData)
+    // console.log('New data', patentData)
     setDocumentData(patentData)
   }
 

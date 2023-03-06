@@ -9,12 +9,6 @@ export async function sendRequest(url, method ='GET', payload = null, error = 'B
         console.log('options.body', options.body)
     }
 
-    // const token = getToken()
-    // if(token){
-    //     options.headers ||= {}
-    //     options.headers.Authorization = `Bearer ${token}`
-    // }
-
     const res = await fetch(url, options);
 
     if(res.ok) return res.json()

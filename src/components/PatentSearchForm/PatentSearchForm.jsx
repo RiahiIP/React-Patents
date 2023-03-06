@@ -17,11 +17,9 @@ export default function PatentSearchForm({updateDocument}) {
     }
     const handleSubmit = async (evt) => {
         evt.preventDefault()
-        // window.alert(formData.patentId)
         try {
-            // const patentId = formData.patentId
             const patentData = await postPatentId(formData)
-            console.log(patentData)
+            // console.log(patentData)
             updateDocument(patentData)
         } catch (error) {
             
