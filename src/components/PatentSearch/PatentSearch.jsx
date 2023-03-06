@@ -2,7 +2,7 @@ import './PatentSearch.css'
 
 import PatentSearchForm from '../PatentSearchForm/PatentSearchForm'
 
-export default function PatentSearch() {
+export default function PatentSearch({updateDocument}) {
     return(
         <div className='PatentSearch card col-4 p-4 m-2'>
             <div className=''>
@@ -10,7 +10,7 @@ export default function PatentSearch() {
             </div>
             <br />
             <div>
-                <PatentSearchForm />
+                <PatentSearchForm updateDocument={updateDocument} />
             </div>
         </div>
     )

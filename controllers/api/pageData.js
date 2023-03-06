@@ -1,4 +1,4 @@
-const pageData = require('../../models/pageData')
+const pageData = require('../../helpers/pageData')
 
 
 function index (req, res, next) {
@@ -8,17 +8,11 @@ function index (req, res, next) {
 }
 
 function create(req, res, next) {
-    res.redirect(`/${req.body.patentId}`)
-}
-
-function show(req, res, next) {
-    pageData.pageData(req.params.id)
+    // console.log(req.body)
+    pageData.pageData(req.body.patentId)
     .then((data)=> {
         // console.log('data:', data)
-        res.render('show', { 
-            data:data,
-            title: 'Google Patent Scraper',
-        })
+        res.json(data)
     })
     .catch((err)=> {
         console.log(err);
@@ -28,6 +22,5 @@ function show(req, res, next) {
 
 module.exports = {
 index,
-show,
 create
 }
