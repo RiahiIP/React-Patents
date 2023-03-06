@@ -1,6 +1,6 @@
 import './Document.css'
 
-export default function Document() {
+export default function Document(documentData) {
     return(
         <div className='Document card col p-4 m-2'>
             <div className=''>
@@ -13,27 +13,27 @@ export default function Document() {
                         <tbody>
                             <tr>
                                 <td><b>Application Number: </b></td>
-                                <td>...</td>
+                                <td>{documentData.applicationNumber}</td>
                             </tr>
                             <tr>
                                 <td><b>Date Submitted: </b></td>
-                                <td>...</td>
+                                <td>{documentData.dateSubmitted}</td>
                             </tr>
                             <tr>
                                 <td><b>Patent Number: </b></td>
-                                <td>...</td>
+                                <td>{documentData.patentNumber}</td>
                             </tr>
                             <tr>
                                 <td><b>Issue Date: </b></td>
-                                <td>...</td>
+                                <td>{documentData.issueDate}</td>
                             </tr>
                             <tr>
                                 <td><b>Assignees: </b></td>
-                                <td>...</td>
+                                <td>{documentData.assignees}</td>
                             </tr>
                             <tr>
                                 <td><b>Inventors: </b></td>
-                                <td>...</td>
+                                <td>{documentData.inventors}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -42,15 +42,15 @@ export default function Document() {
                 <div>
                     <div>
                         <h3><b><u>Abstract</u></b></h3>
-                        <p>...</p>
+                        <p>{documentData.abstract}</p>
                     </div>
                     <div>
                         <h3><b><u>Description</u></b></h3>
-                        <p>...</p>
+                        <p>{documentData.description}</p>
                     </div>
                     <div>
                         <h3><b><u>Claims</u></b></h3>
-                        <p>...</p>
+                        <p>{documentData.claims}</p>
                     </div>
                 </div>
             </div>
