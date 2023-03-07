@@ -1,11 +1,11 @@
 const pageData = require('../../helpers/pageData')
 
 
-function index (req, res, next) {
-    res.render('index', { 
-        title: 'Google Patent Scraper',
-    })
-}
+// function index (req, res, next) {
+//     res.render('index', { 
+//         title: 'Google Patent Scraper',
+//     })
+// }
 
 function create(req, res, next) {
     // console.log(req.body)
@@ -21,6 +21,6 @@ function create(req, res, next) {
 }
 
 module.exports = {
-index,
+// index,
 create
 }
