@@ -1,6 +1,9 @@
 import './Document.css'
 
+import Claim from '../Claim/Claim'
+
 export default function Document({documentData}) {
+
     return(
         <div className='Document card col p-4 m-2'>
             <div className=''>
@@ -80,7 +83,13 @@ export default function Document({documentData}) {
                     {documentData.claims &&
                     <div>
                         <h3><b><u>Claims</u></b></h3>
-                        <p>{documentData.claims}</p>
+                        <div>
+                            {
+                            documentData.claims.map ( (claim, idx) =>(
+                                <Claim claim={claim} key={idx} />
+                            ))}
+                            <br></br>
+                        </div>
                     </div>
                     }
                     

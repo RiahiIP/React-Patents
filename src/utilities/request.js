@@ -6,7 +6,7 @@ export async function sendRequest(url, method ='GET', payload = null, error = 'B
     if(payload){
         options.headers = { 'Content-Type': 'application/json' }
         options.body = JSON.stringify(payload)
-        console.log('options.body', options.body)
+        // console.log('options.body', options.body)
     }
 
     const res = await fetch(url, options);
