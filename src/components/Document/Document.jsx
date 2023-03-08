@@ -66,7 +66,7 @@ export default function Document({documentData}) {
                 </div>
                 <br />
                 <div>
-                    {/* {documentData.abstract &&
+                    {documentData.abstract &&
                     <div>
                         <h3><b><u>Abstract</u></b></h3>
                         <p>{documentData.abstract}</p>
@@ -78,7 +78,7 @@ export default function Document({documentData}) {
                         <h3><b><u>Description</u></b></h3>
                         <p>{documentData.description}</p>
                     </div>
-                    } */}
+                    }
                     
                     {documentData.claims &&
                     <div>
