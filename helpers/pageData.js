@@ -62,7 +62,27 @@ const pageData = async (patentId) => {
     const abstract = parsedPageData('.abstract').text()
     
     // CLAIMS
-    const claims = parsedPageData('.claim-text').text()
+    const claimsList = () => {
+        let claims = []
+        let num = 1
+        while (parsedPageData(`#CLM-0000${num}`).text() || parsedPageData(`#CLM-000${num}`).text() || parsedPageData(`#CLM-00${num}`).text()) {
+            if (num < 10) {
+                claims.push(parsedPageData(`#CLM-0000${num}`).text())
+                num++
+            } else if (num >= 10 && num < 100) {
+                claims.push(parsedPageData(`#CLM-000${num}`).text())
+                num++
+            } else if (num >= 100 && num < 1000) {
+                claims.push(parsedPageData(`#CLM-00${num}`).text())
+                num++
+            }
+            
+        }
+        
+        return claims
+    }
+    const claims = claimsList()
+    // console.log(claims)
     
     // DESCRIPTION
     const description = parsedPageData('.description').text()
@@ -84,10 +104,6 @@ const pageData = async (patentId) => {
 
 
 };
-
-// // invoking the main function (pageData)
-// pageData();
-
 
 
 module.exports = {
