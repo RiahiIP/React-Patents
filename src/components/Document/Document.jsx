@@ -1,6 +1,7 @@
 import './Document.css'
 
 import Claim from '../Claim/Claim'
+import Description from '../Description/Description'
 
 export default function Document({documentData}) {
 
@@ -76,13 +77,19 @@ export default function Document({documentData}) {
                     {documentData.description &&
                     <div>
                         <h3><b><u>Description</u></b></h3>
-                        <p>{documentData.description}</p>
+                        <div>
+                            {
+                            documentData.description.map ( (description, idx) =>(
+                                <Description description={description} key={idx} />
+                            ))}
+                            <br></br>
+                        </div>
                     </div>
                     }
                     
                     {documentData.claims &&
                     <div>
-                        <h3><b><u>Claims</u></b></h3>
+                        <h3><b><u>Claims</u></b><small> ({documentData.claims.length})</small></h3>
                         <div>
                             {
                             documentData.claims.map ( (claim, idx) =>(

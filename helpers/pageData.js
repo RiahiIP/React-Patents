@@ -85,7 +85,27 @@ const pageData = async (patentId) => {
     // console.log(claims)
     
     // DESCRIPTION
-    const description = parsedPageData('.description').text()
+    // const description = parsedPageData('.description').text()
+    const descriptionList = () => {
+        let descriptions = []
+        let num = 2
+        while (parsedPageData(`#p-000${num}`).text() || parsedPageData(`#p-00${num}`).text() || parsedPageData(`#p-0${num}`).text()) {
+            if (num < 10) {
+                descriptions.push(parsedPageData(`#p-000${num}`).text())
+                num++
+            } else if (num >= 10 && num < 100) {
+                descriptions.push(parsedPageData(`#p-00${num}`).text())
+                num++
+            } else if (num >= 100 && num < 1000) {
+                descriptions.push(parsedPageData(`#p-0${num}`).text())
+                num++
+            }
+            
+        }
+        
+        return descriptions
+    }
+    const description = descriptionList()
 
     return {
         title: title,
